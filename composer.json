@@ -1,0 +1,21 @@
+{
+  "name": "storage/client",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Ethan Hunt",
+      "email": "execrot@gmail.com"
+    }
+  ],
+  "repositories": [{
+    "type": "composer",
+    "url": "https://packages.zendframework.com/"
+  }],
+  "require": {
+    "php" : ">=5.4",
+    "zendframework/zend-http": "*"
+  },
+  "autoload": {
+    "psr-0": { "Storage": "src/" }
+  }
+}

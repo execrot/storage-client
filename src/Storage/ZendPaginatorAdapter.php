@@ -26,7 +26,7 @@ class ZendPaginatorAdapter implements \Zend_Paginator_Adapter_Interface
      */
     public function getItems($offset, $itemCountPerPage)
     {
-        $this->_storage->getList($offset, $itemCountPerPage);
+        return $this->_storage->getList($offset, $itemCountPerPage);
     }
 
     /**
@@ -36,6 +36,6 @@ class ZendPaginatorAdapter implements \Zend_Paginator_Adapter_Interface
      */
     public function count()
     {
-        $this->_storage->getCount();
+        return $this->_storage->getCount();
     }
 }

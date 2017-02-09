@@ -161,6 +161,23 @@ class Storage
     }
 
     /**
+     * @return int
+     */
+    public function getCount()
+    {
+        $this->_client->setUri(implode('/', [
+            self::getConfig()['uri'],
+            'file/count-total'
+        ]));
+
+        echo $this->_client->send()->getBody(); die("\n\n\n");
+
+        $response = json_decode($this->_client->send()->getBody(), true);
+
+        return $response['count'];
+    }
+
+    /**
      * @param string|array $identities
      *
      * @return bool

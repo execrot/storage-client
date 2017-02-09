@@ -9,12 +9,11 @@ require_once('vendor/autoload.php');
     'uri' => 'http://storage.loc'
 ]);
 
-$account = new \Storage\Account();
 $username = $password = sha1(microtime());
+
+$account = new \Storage\Account();
 $account->register($username, $password);
-
 $user = $account->auth($username, $password);
-
 \Storage\Storage::setToken($user->getTokens()[0]);
 
 $storage = new \Storage\Storage();
@@ -27,6 +26,7 @@ var_dump($info);
 
 $list = $storage->getList(0, 10);
 var_dump($list);
+echo $storage->getCount();
 
 $searchResults = $storage->search('search string', 0, 10);
 var_dump($searchResults);

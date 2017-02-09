@@ -2,7 +2,7 @@
 
 namespace Storage;
 
-class ZendPaginatorAdapter extends \Zend_Paginator_Adapter_Interface
+class ZendPaginatorAdapter implements \Zend_Paginator_Adapter_Interface
 {
     /**
      * @var Storage

@@ -170,8 +170,6 @@ class Storage
             'file/count-total'
         ]));
 
-        echo $this->_client->send()->getBody(); die("\n\n\n");
-
         $response = json_decode($this->_client->send()->getBody(), true);
 
         return $response['count'];

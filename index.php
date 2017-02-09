@@ -9,7 +9,13 @@ require_once('vendor/autoload.php');
     'uri' => 'http://storage.loc'
 ]);
 
-\Storage\Storage::setToken('{token}');
+$account = new \Storage\Account();
+$username = $password = sha1(microtime());
+$account->register($username, $password);
+
+$user = $account->auth($username, $password);
+
+\Storage\Storage::setToken($user->getTokens()[0]);
 
 $storage = new \Storage\Storage();
 

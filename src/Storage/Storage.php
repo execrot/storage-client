@@ -94,7 +94,7 @@ class Storage
 
         $this->_client->setParameterGet([
             'from' => $from,
-            'to' => $count
+            'count' => $count
         ]);
 
         $filesInfo = json_decode($this->_client->send()->getBody(), true);
